@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Grooming Glove | Gentle Pet Grooming Glove</title>
+<meta name="description" content="A gentle grooming glove that lifts loose fur while you pet your dog or cat. Ships in 2-3 business days.">
+<style>
+  :root { --bg:#fbf8f4; --surface:#ffffff; --text:#222; --muted:#666; --brand:#2f6f5e; --accent:#e8b84b; --border:#e6e0d8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14191a; --surface:#1e2526; --text:#f1f1ee; --muted:#b0b6b6; --brand:#7fc2ae; --accent:#e8b84b; --border:#2e3838; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  a { color: var(--brand); }
+  a:focus-visible, button:focus-visible, select:focus-visible { outline:3px solid var(--brand); outline-offset:3px; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 20px; }
+  header { padding:18px 0; border-bottom:1px solid var(--border); background:var(--surface); }
+  .brand { font-weight:800; font-size:1.1rem; color:var(--brand); text-decoration:none; }
+  .product { display:grid; grid-template-columns:1fr 1fr; gap:40px; padding:48px 0; align-items:start; }
+  .visual { aspect-ratio:1/1; border-radius:18px; background:linear-gradient(135deg,#e9f3ef,#f6e9c9); border:1px solid var(--border);
+    display:grid; place-items:center; font-size:5rem; }
+  h1 { font-size:clamp(1.7rem,3.5vw,2.4rem); line-height:1.15; margin:0 0 10px; }
+  .price { font-size:1.9rem; font-weight:800; margin:8px 0 4px; }
+  .muted { color:var(--muted); }
+  ul.points { padding-left:20px; }
+  label { font-weight:600; display:block; margin:18px 0 6px; }
+  select { padding:10px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:1rem; }
+  .btn { display:block; width:100%; text-align:center; margin-top:18px; padding:16px; border:0; border-radius:12px;
+    background:var(--accent); color:#14213d; font-weight:800; font-size:1.1rem; cursor:pointer; text-decoration:none; }
+  .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+  .notice { margin-top:14px; padding:12px 14px; border-radius:10px; background:var(--surface); border:1px dashed var(--accent); font-size:.92rem; display:none; }
+  .notice.show { display:block; }
+  .trust { margin-top:18px; font-size:.92rem; color:var(--muted); }
+  section { padding:36px 0; border-top:1px solid var(--border); }
+  section h2 { font-size:1.4rem; margin:0 0 12px; }
+  details { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 18px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  details p { margin:10px 0 0; color:var(--muted); }
+  footer { padding:28px 0; border-top:1px solid var(--border); color:var(--muted); font-size:.9rem; }
+  @media (max-width:760px) { .product { grid-template-columns:1fr; gap:24px; padding:28px 0; } }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+
+<!-- ============ STORE SETTINGS: edit these ============ -->
+<script>
+  var STORE = {
+    name: "Your Store Name",                 // your business or brand name
+    email: "support@yourdomain.com",         // customer support email
+    productName: "Pet Grooming Glove",
+    price: 32.00,                            // your retail price, USD
+    shippingNote: "Free shipping on all orders.",
+    // Paste your Stripe Payment Link here (create it in your Stripe dashboard for this product).
+    // Turn on "Adjustable quantity" in the link settings if you want the quantity selector to work.
+    checkoutUrl: "PASTE_STRIPE_PAYMENT_LINK_HERE",
+    businessAddress: "Your business name and mailing address, as required in your jurisdiction"
+  };
+</script>
+
+<header>
+  <div class="wrap"><a class="brand" id="brandName" href="#">Your Store Name</a></div>
+</header>
+
+<main class="wrap">
+  <div class="product">
+    <div class="visual" aria-hidden="true">🐾</div>
+
+    <div>
+      <h1 id="productName">Pet Grooming Glove</h1>
+      <p class="muted">Lifts loose fur while you pet your dog or cat. Less shedding on the couch, more time together.</p>
+      <div class="price" id="price">$32.00</div>
+      <p class="muted" id="shippingNote">Free shipping on all orders.</p>
+
+      <ul class="points">
+        <li>Soft silicone tips grip fur, not skin</li>
+        <li>Works on short and medium coats</li>
+        <li>Machine-washable glove</li>
+        <li>Ships in 2-3 business days</li>
+      </ul>
+
+      <label for="qty">Quantity</label>
+      <select id="qty" aria-label="Quantity">
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        <option value="4">4</option><option value="5">5</option>
+      </select>
+
+      <a class="btn" id="buyBtn" href="#" role="button">Buy now</a>
+      <div class="notice" id="setupNotice">
+        Checkout is not connected yet. Paste your Stripe Payment Link into the STORE settings at the top of this file to turn on purchases.
+      </div>
+      <p class="trust">Secure checkout. Your payment is processed by our payment provider; we never see your card details.</p>
+    </div>
+  </div>
+</main>
+
+<section class="wrap">
+  <h2>Shipping</h2>
+  <p>Orders ship within 2-3 business days from our supplier. Tracking is emailed when your order ships. Estimated delivery is 7-14 business days, depending on your location. Delivery times are estimates, not guarantees.</p>
+</section>
+
+<section class="wrap">
+  <h2>Returns and refunds</h2>
+  <p>If your glove arrives damaged or the wrong item was sent, email us within 14 days of delivery with a photo, and we will send a replacement or refund. For other returns, contact us within 14 days of delivery. Unused items in original packaging may be returned at the customer's cost. Refunds go to your original payment method within 5-10 business days after we receive the return.</p>
+</section>
+
+<section class="wrap">
+  <h2>Questions</h2>
+  <details><summary>How do I use it?</summary><p>Put the glove on, then gently pet your pet from head to tail. Loose hair collects in the silicone tips. Shake it off or rinse the glove.</p></details>
+  <details><summary>Is it safe for my pet's skin?</summary><p>The glove is made for brushing and petting, not for medical treatment. If your pet has skin irritation, stop use and contact your veterinarian.</p></details>
+  <details><summary>Can I wash it?</summary><p>Yes. Check the care label on your glove for the recommended wash setting.</p></details>
+  <details><summary>How do I contact you?</summary><p>Email <span id="supportEmail">support@yourdomain.com</span>. We reply within one business day.</p></details>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p id="footerBusiness">Your business name and mailing address, as required in your jurisdiction</p>
+    <p><a href="#privacy">Privacy policy</a> · <a href="#terms">Terms of service</a> · <a href="#shipping-policy">Shipping policy</a> · <a href="#returns">Refund policy</a></p>
+    <p id="privacy">Privacy: We collect your name, email, and shipping address only to fulfill your order and answer support questions. We do not sell your data.</p>
+    <p id="terms">Terms: Prices are in USD. Product availability and shipping times are subject to change. We reserve the right to cancel orders with obvious pricing errors.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var fmt = function (n) { return "$" + n.toFixed(2); };
+    document.getElementById("brandName").textContent = STORE.name;
+    document.getElementById("productName").textContent = STORE.productName;
+    document.getElementById("price").textContent = fmt(STORE.price);
+    document.getElementById("shippingNote").textContent = STORE.shippingNote;
+    document.getElementById("supportEmail").textContent = STORE.email;
+    document.getElementById("footerBusiness").textContent = STORE.businessAddress;
+    document.title = STORE.productName + " | " + STORE.name;
+
+    var buy = document.getElementById("buyBtn");
+    var notice = document.getElementById("setupNotice");
+    var qty = document.getElementById("qty");
+    var ready = STORE.checkoutUrl && STORE.checkoutUrl.indexOf("PASTE_") !== 0;
+
+    function updateBuy() {
+      var q = parseInt(qty.value, 10) || 1;
+      if (ready) {
+        var sep = STORE.checkoutUrl.indexOf("?") === -1 ? "?" : "&";
+        buy.href = STORE.checkoutUrl + sep + "quantity=" + q;
+        buy.setAttribute("aria-disabled", "false");
+        buy.textContent = "Buy now · " + fmt(STORE.price * q);
+        notice.classList.remove("show");
+      } else {
+        buy.removeAttribute("href");
+        buy.setAttribute("aria-disabled", "true");
+        buy.textContent = "Buy now · " + fmt(STORE.price * q);
+        notice.classList.add("show");
+      }
+    }
+    buy.addEventListener("click", function (e) { if (!ready) e.preventDefault(); });
+    qty.addEventListener("change", updateBuy);
+    updateBuy();
+  })();
+</script>
+</body>
+</html>
